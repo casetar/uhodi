@@ -1,11 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 250" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 250" role="img" aria-labelledby="title">
 <title id="title">Купер</title>
-<g transform="translate(12 8)" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
-  <circle cx="106" cy="58" r="32" fill="#ffffff"/>
-  <path d="M56 105 Q106 78 156 105 L174 166 Q178 181 163 184 L49 184 Q34 181 38 166 Z" fill="#ffffff"/>
-  <path d="M67 111 L37 143 L13 126" fill="none"/>
-  <path d="M145 111 L175 143 L199 126" fill="none"/>
-  <path d="M80 184 L68 222 M132 184 L144 222" fill="none" stroke="#68f18a" stroke-width="16"/>
+<g transform="translate(8 7)" stroke-linecap="round" stroke-linejoin="round">
+  <!-- courier head -->
+  <circle cx="105" cy="48" r="29" fill="#ffffff"/>
+  <!-- delivery backpack -->
+  <path d="M37 99 Q37 88 49 88 H83 V151 H37 Z" fill="#68f18a"/>
+  <path d="M49 103 H70 V139 H49" fill="none" stroke="#163b25" stroke-width="5"/>
+  <!-- body -->
+  <path d="M91 87 Q111 77 132 89 L151 150 Q154 163 141 168 L77 168 Q64 164 69 151 Z" fill="#ffffff"/>
+  <path d="M84 107 L49 132 L27 119" fill="none" stroke="#ffffff" stroke-width="15"/>
+  <path d="M135 105 L166 130 L188 112" fill="none" stroke="#ffffff" stroke-width="15"/>
+  <!-- legs with strong white edge and green fill -->
+  <path d="M89 164 L72 218" fill="none" stroke="#ffffff" stroke-width="21"/>
+  <path d="M89 164 L72 218" fill="none" stroke="#68f18a" stroke-width="12"/>
+  <path d="M127 164 L151 214" fill="none" stroke="#ffffff" stroke-width="21"/>
+  <path d="M127 164 L151 214" fill="none" stroke="#68f18a" stroke-width="12"/>
+  <!-- motion accents -->
+  <path d="M12 75 H35 M3 91 H25" stroke="#68f18a" stroke-width="7"/>
 </g>
-<text x="226" y="169" fill="#ffffff" stroke="#68f18a" stroke-width="2.5" paint-order="stroke fill" font-family="Arial, sans-serif" font-size="118" font-weight="900" letter-spacing="-9">купер</text>
+<text x="218" y="165" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="124" font-weight="900" letter-spacing="-8">купер</text>
+<path d="M224 190 H548" stroke="#68f18a" stroke-width="8" stroke-linecap="round"/>
+<circle cx="568" cy="190" r="5" fill="#68f18a"/>
 </svg>
