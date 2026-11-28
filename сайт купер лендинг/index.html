@@ -26,14 +26,14 @@ a{color:inherit;text-decoration:none}
 
 header{position:absolute;z-index:5;top:0;left:0;right:0;padding:16px 0}
 .nav{display:flex;align-items:center;justify-content:space-between;position:relative}
-.brand img{display:block;width:72px;height:72px;object-fit:contain}
+.brand img{display:block;width:108px;height:108px;object-fit:contain}
 .navlinks{display:flex;gap:30px;font-size:15px;font-weight:700}
 .navlinks a{opacity:.75}.navlinks a:hover{opacity:1}
 .nav-right{display:flex;align-items:center;gap:10px}
 .nav-cta{padding:13px 20px;border-radius:99px;background:var(--ink);color:#fff;font-size:14px;font-weight:800}
 .burger{display:none;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,.7);font-size:22px;cursor:pointer;place-items:center}
 
-.hero{padding:140px 0 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 10%,rgba(255,255,255,.6),transparent 38%),linear-gradient(145deg,#5cec7d 0%,#a1f8b4 58%,#e8f7ed 100%)}
+.hero{padding:164px 0 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 10%,rgba(255,255,255,.6),transparent 38%),linear-gradient(145deg,#5cec7d 0%,#a1f8b4 58%,#e8f7ed 100%)}
 .hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#173b2116 1px,transparent 1px);background-size:22px 22px;opacity:.5}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}
 h1{font-size:clamp(36px,5vw,62px);line-height:1.05;letter-spacing:-2.5px;margin:0 0 22px;font-weight:800;max-width:640px}
@@ -77,7 +77,10 @@ section{padding:96px 0}
 .job{display:flex;flex-direction:column;padding:26px;border:1px solid var(--line);border-radius:22px;background:#fff;min-height:290px;transition:border-color .2s,transform .2s}
 .job:hover{border-color:#8fe4a3;transform:translateY(-4px)}
 .job-top{display:flex;justify-content:space-between;align-items:center}
-.ico{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--mint);color:var(--deep);font-size:26px}
+.ico{position:relative;display:grid;place-items:center;width:78px;height:78px;border-radius:26px;background:var(--mint)}
+.ico:before{content:"";position:absolute;inset:6px;border:1px dashed #84cf98;border-radius:50%}
+.pic{position:relative;width:50px;height:50px;fill:none;stroke:#101410;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.job:hover .pic{transform:rotate(-7deg) scale(1.12)}
 .job-label{font-size:14px;font-weight:700;color:var(--muted)}
 .job h3{font-size:22px;letter-spacing:-.8px;margin:22px 0 6px;line-height:1.2}
 .job p{font-size:15px;color:var(--muted);margin:0}
@@ -91,9 +94,7 @@ section{padding:96px 0}
 
 .how{background:#eef6ef}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
-.steps:before{content:"";position:absolute;left:12%;right:12%;top:50px;border-top:2px dashed #8fcf9f}
 .step{position:relative;background:#fff;border-radius:22px;padding:26px;min-height:210px}
-.step-num{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--green);font-weight:800;font-size:18px;position:relative;z-index:1}
 .step h3{font-size:21px;letter-spacing:-.6px;margin:26px 0 8px}
 .step p{font-size:15px;color:var(--muted);margin:0}
 
@@ -112,7 +113,7 @@ details p{font-size:15px;line-height:1.75;color:var(--muted);max-width:640px;mar
 
 footer{padding:34px 0;background:var(--ink);color:#fff}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
-.footer-row img{display:block;width:64px;height:64px;object-fit:contain}
+.footer-row img{display:block;width:96px;height:96px;object-fit:contain}
 .footer-note{font-size:13px;line-height:1.65;color:#a9b5ab;max-width:600px;text-align:right}
 .ad{display:inline-block;margin-right:6px;padding:1px 8px;border:1px solid #a9b5ab;border-radius:6px;font-weight:800;color:#fff}
 .sticky{display:none}
@@ -126,22 +127,28 @@ footer{padding:34px 0;background:var(--ink);color:#fff}
 .lead-form label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
 .lead-form input,.lead-form select{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);font:inherit;font-weight:500}
 .lead-form .invalid{border-color:#c0392b;background:#fff6f5}
-.lead-form .agree{grid-column:1/-1;flex-direction:row;align-items:flex-start;gap:10px;font-size:13px;font-weight:500;color:var(--muted)}
-.lead-form .agree input{width:20px;height:20px;margin-top:2px;padding:0;flex:none}
+.lead-form .agree{grid-column:1/-1;flex-direction:row;align-items:flex-start;gap:10px;font-size:14px;line-height:1.45;font-weight:500;color:var(--muted)}
+.lead-form .agree input{width:20px;min-width:20px;height:20px;min-height:0;margin:1px 0 0;padding:0;flex:none;accent-color:var(--ink)}
+.lead-form .agree input.invalid{outline:2px solid #c0392b;outline-offset:2px}
 .lead-form .btn{grid-column:1/-1;border:0;cursor:pointer}
 .lead-form .btn:disabled{opacity:.6;cursor:wait}
+.ticket{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:10px;padding-bottom:14px;border-bottom:2px dashed var(--line);font-size:14px;font-weight:800}
+.ticket span:last-child{font-weight:500;color:var(--muted)}
+.live{display:inline-block;width:10px;height:10px;margin-right:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(104,241,138,.8);animation:ping 2.4s ease-out infinite}
+.apply-art{display:grid;place-items:center;width:112px;height:112px;margin-top:26px;border-radius:50%;background:rgba(255,255,255,.55);animation:drift 4s ease-in-out infinite alternate}
+.apply-art .pic{width:72px;height:72px}
 .form-msg{grid-column:1/-1;margin:0;min-height:1.4em;font-size:14px;font-weight:700}
 
 @media(max-width:800px){
 .navlinks{display:none}
 .navlinks.open{display:flex;flex-direction:column;gap:16px;position:absolute;top:calc(100% + 6px);left:0;right:0;padding:22px;border-radius:20px;background:#fff;box-shadow:0 18px 40px #0003}
 .burger{display:grid}
-.hero{padding:112px 0 60px}
+.hero{padding:132px 0 60px}
+.brand img{width:88px;height:88px}
 .hero-grid{grid-template-columns:1fr}
 .hero-art{min-height:380px}
 .section-top{display:block}.section-desc{margin-top:14px}
 .job-grid{grid-template-columns:repeat(2,1fr)}
-.steps:before{display:none}
 .apply-box{grid-template-columns:1fr;gap:26px;padding:34px 24px}
 .faq-grid{grid-template-columns:1fr;gap:26px}
 body{padding-bottom:84px}
@@ -163,42 +170,105 @@ h1{letter-spacing:-1.6px}
 section{padding:68px 0}
 .job-grid,.steps{grid-template-columns:1fr}
 .job{min-height:0}
+.route{display:none}
+.apply-art{display:none}
 .apply{padding-bottom:68px}
 .apply-box{border-radius:24px}
 .lead-form{grid-template-columns:1fr;padding:18px}
 .footer-row{flex-direction:column;align-items:flex-start}
 .footer-note{text-align:left}
 }
-@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.step-top{display:flex;justify-content:space-between;align-items:center}
+.step-n{font-size:15px;font-weight:800;color:var(--deep)}
+.route{position:relative;height:64px;margin-bottom:14px}
+.route:before{content:"";position:absolute;left:16.66%;right:16.66%;top:50%;height:3px;margin-top:-1px;background:repeating-linear-gradient(90deg,#7fc993 0 10px,transparent 10px 20px);background-size:20px 3px;animation:march 1s linear infinite}
+.stop{position:absolute;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--ink);border:4px solid var(--green);animation:ping 2.4s ease-out infinite}
+.stop:nth-child(1){left:16.66%}.stop:nth-child(2){left:50%;animation-delay:.8s}.stop:nth-child(3){left:83.33%;animation-delay:1.6s}
+.rider{position:absolute;top:50%;left:16.66%;width:54px;height:54px;margin:-27px 0 0 -27px;display:grid;place-items:center;border-radius:50%;background:#fff;box-shadow:0 8px 20px #1a3b2026;opacity:0;animation:ride 9s ease-in-out infinite}
+.rider .pic{width:36px;height:36px}
+.hero-grid>div:first-child>*{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-grid>div:first-child>:nth-child(2){animation-delay:.12s}
+.hero-grid>div:first-child>:nth-child(3){animation-delay:.24s}
+.hero-grid>div:first-child>:nth-child(4){animation-delay:.36s}
+.phone{animation:bob 4.5s ease-in-out infinite alternate}
+.orbit:before{animation:spin 70s linear infinite}
+.apply-box:after{animation:spin 50s linear infinite}
+.tag-1{animation:drift 4s ease-in-out infinite alternate}
+.tag-2{animation:drift 4.6s ease-in-out -2s infinite alternate}
+.ph-btn{animation:tap 2.4s ease-in-out infinite}
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+@media(min-width:961px){.trust-row{flex-wrap:nowrap;justify-content:center;gap:56px}.trust-item{white-space:nowrap}}
+@media(max-width:1100px){.trust-row{gap:18px 30px}.trust-item{font-size:14px;gap:10px}.trust-item .i{width:32px;height:32px;padding:7px}}
+@media(max-width:960px){.trust-row{display:grid;grid-template-columns:1fr 1fr}}
+html{-webkit-text-size-adjust:100%}
+a,button{touch-action:manipulation}
+section[id],.apply{scroll-margin-top:12px}
+.lead-form input,.lead-form select{min-height:52px}
+.ticket{flex-wrap:wrap}
+.sticky{transition:transform .3s ease}
+.sticky.hide{transform:translateY(110%)}
+@media(max-width:540px){
+.actions .btn{flex:1 1 100%}
+.hero{padding-bottom:48px}
+.lead-form .btn{padding:18px}
+.section-title{letter-spacing:-1.6px}
+summary{font-size:16px}
+details p{margin-right:0}
+}
+@media(max-width:400px){
+h1{font-size:33px}
+.sum{letter-spacing:-1px}
+.hero-art{min-height:290px}
+.orbit{width:250px}
+.phone{width:184px}
+.ph-card{padding:12px}
+.tag{font-size:12px;padding:8px 10px}
+.trust-row{grid-template-columns:1fr}
+.apply-box{padding:28px 18px}
+}
+@keyframes bob{from{transform:rotate(-4deg) translateY(0)}to{transform:rotate(-4deg) translateY(-10px)}}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-9px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes march{to{background-position:20px 0}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(104,241,138,.8)}70%,100%{box-shadow:0 0 0 14px rgba(104,241,138,0)}}
+@keyframes tap{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes ride{0%{left:16.66%;opacity:0}6%{opacity:1}20%{left:16.66%}40%{left:50%}55%{left:50%}75%{left:83.33%}90%{left:83.33%;opacity:1}100%{left:83.33%;opacity:0}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rider{opacity:0}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-basket" viewBox="0 0 24 24"><path d="M5 9h14l-1.5 9a2 2 0 0 1-2 1.7h-7a2 2 0 0 1-2-1.7L5 9z"/><path d="M9 9l3-5 3 5"/></symbol>
-<symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.8"/><path d="M12 8l-2 4 3 3v5M10 12l-3 1M13 15l3 1.5M12 8l3 3 3 1"/></symbol>
-<symbol id="i-bike" viewBox="0 0 24 24"><circle cx="6" cy="16" r="3.5"/><circle cx="18" cy="16" r="3.5"/><path d="M6 16l4-8h5l3 8M10 8L9 6H7M12 16l3-8"/></symbol>
-<symbol id="i-car" viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4M4 16h16M4 16v2h3v-2M17 16v2h3v-2"/><circle cx="8" cy="13" r=".8"/><circle cx="16" cy="13" r=".8"/></symbol>
-<symbol id="i-moped" viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h6l2-6h-3M14 11l1-4h3M9 17l2-4"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2.2"/></symbol>
 <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></symbol>
 <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10h18M16 14.5h2"/></symbol>
 <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8H4zM10 19v-5h4v5"/></symbol>
 <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/></symbol>
 <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></symbol>
+<g id="car-g"><path d="M5 32v-6l5-10h28l5 10v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z" fill="#68f18a"/><path d="M13 19h22l3.5 7h-29z" fill="#fff"/><circle cx="14" cy="36" r="5" fill="#101410"/><circle cx="34" cy="36" r="5" fill="#101410"/><circle cx="9.5" cy="30" r="1.6" fill="#fff" stroke="none"/><circle cx="38.5" cy="30" r="1.6" fill="#fff" stroke="none"/></g>
+<symbol id="p-basket" viewBox="0 0 48 48"><rect x="25" y="8" width="6" height="14" rx="3" transform="rotate(18 28 15)" fill="#fff"/><circle cx="18" cy="16" r="5" fill="#fff"/><path d="M17 21l5-10M31 21l-5-10M8 21h32l-3.5 17a3 3 0 0 1-3 2.4h-19a3 3 0 0 1-3-2.4z" fill="#68f18a"/><path d="M17 28v8M24 28v8M31 28v8"/></symbol>
+<symbol id="p-walk" viewBox="0 0 48 48"><circle cx="28" cy="8" r="4" fill="#fff"/><path d="M28 14l-3 13m3-10l6 6 5-1m-14 5l6 6-1 9m-5-15l-6 7-5 5" /><rect x="14" y="14" width="11" height="14" rx="3" fill="#68f18a"/><path d="M17 19h5"/></symbol>
+<symbol id="p-bike" viewBox="0 0 48 48"><circle cx="11" cy="34" r="8" fill="#fff"/><circle cx="38" cy="34" r="8" fill="#fff"/><path d="M11 34l8-14h14l5 14M19 20l-2-5h-5M26 34l7-14M31 15h5"/><rect x="2" y="14" width="15" height="12" rx="3" fill="#68f18a"/></symbol>
+<symbol id="p-car" viewBox="0 0 48 48"><use href="#car-g"/></symbol>
+<symbol id="p-rent" viewBox="0 0 48 48"><g transform="translate(0 9) scale(.82)"><use href="#car-g"/></g><circle cx="38" cy="10" r="6" fill="#fff"/><circle cx="38" cy="10" r="1.6" fill="#101410" stroke="none"/><path d="M33.5 14.5L25 23M28.5 20l3 3M25.5 23l3 3"/></symbol>
+<symbol id="p-pin" viewBox="0 0 48 48"><ellipse cx="24" cy="44" rx="10" ry="2.5" fill="#101410" opacity=".15" stroke="none"/><path d="M24 43s-14-12-14-23a14 14 0 0 1 28 0c0 11-14 23-14 23z" fill="#68f18a"/><circle cx="24" cy="20" r="5.5" fill="#fff"/></symbol>
+<symbol id="p-choose" viewBox="0 0 48 48"><rect x="6" y="8" width="28" height="32" rx="5" fill="#fff"/><path d="M12 18h16M12 25h10"/><circle cx="33" cy="33" r="9" fill="#68f18a"/><path d="M28.5 33l3 3 5-6"/></symbol>
+<symbol id="p-form" viewBox="0 0 48 48"><rect x="12" y="4" width="24" height="40" rx="5" fill="#fff"/><path d="M20 9h8"/><rect x="17" y="16" width="14" height="5" rx="2" fill="#68f18a"/><rect x="17" y="25" width="14" height="5" rx="2" fill="#68f18a"/><rect x="17" y="34" width="14" height="5" rx="2.5" fill="#101410"/></symbol>
+<symbol id="p-call" viewBox="0 0 48 48"><path d="M8 10h32a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H22l-8 8v-8H8a3 3 0 0 1-3-3V13a3 3 0 0 1 3-3z" fill="#68f18a"/><path d="M15 21l5 5 12-11"/></symbol>
 </defs></svg>
 
 <header><div class="wrap nav">
 <a class="brand" href="#"><img src="./logo.svg" alt="Купер"></a>
 <nav class="navlinks" id="menu" aria-label="Разделы"><a href="#jobs">Направления</a><a href="#how">Как начать</a><a href="#faq">Вопросы</a><a href="#apply">Заявка</a></nav>
-<div class="nav-right"><a class="nav-cta" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener">Оставить заявку</a><button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="menu">☰</button></div>
+<div class="nav-right"><a class="nav-cta" href="#apply">Легко заработать</a><button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="menu">☰</button></div>
 </div></header>
 
 <main>
 <section class="hero"><div class="wrap hero-grid">
 <div>
 <h1>Работа курьером в Купере: доход до <span class="sum" id="income">289 000 ₽</span></h1>
-<p class="lead">Доставляй заказы пешком, на велосипеде или автомобиле, а можно собирать их в магазине. Выбери формат и узнай, какие предложения есть в твоём городе.</p>
-<div class="actions"><a class="btn" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener">Выбрать работу</a><a class="btn btn-light" href="#jobs">Смотреть направления</a></div>
+<p class="lead">Без офиса и графика «с девяти до шести». Берёшь заказы, когда удобно, а деньги приходят каждый день. Выбери, что тебе проще, и узнай условия для своего города.</p>
+<div class="actions"><a class="btn" href="#apply">Легко заработать</a><a class="btn btn-light" href="#jobs">Посмотреть варианты</a></div>
 <p class="micro">Доход до 289 000 ₽ в месяц не гарантирован: фактический заработок зависит от города, графика и числа заказов.</p>
 </div>
 <div class="hero-art" aria-hidden="true">
@@ -211,47 +281,50 @@ section{padding:68px 0}
 
 <div class="trust"><div class="wrap trust-row">
 <div class="trust-item"><svg class="i"><use href="#i-wallet"/></svg>Выплаты каждый день</div>
-<div class="trust-item"><svg class="i"><use href="#i-clock"/></svg>Свободный график</div>
-<div class="trust-item"><svg class="i"><use href="#i-home"/></svg>Работа рядом с домом</div>
-<div class="trust-item"><svg class="i"><use href="#i-phone"/></svg>Заявка онлайн</div>
+<div class="trust-item"><svg class="i"><use href="#i-clock"/></svg>Работаешь, когда удобно</div>
+<div class="trust-item"><svg class="i"><use href="#i-home"/></svg>Рядом с домом</div>
+<div class="trust-item"><svg class="i"><use href="#i-phone"/></svg>Оформление онлайн</div>
 </div></div>
 
 <section class="jobs" id="jobs"><div class="wrap">
-<div class="section-top"><div><h2 class="section-title">Как тебе удобнее работать?</h2></div><p class="section-desc">Выбери формат, который подходит. Доход зависит от города, графика, числа заказов и условий конкретного предложения.</p></div>
+<div class="section-top"><div><h2 class="section-title">Что тебе проще всего?</h2></div><p class="section-desc">Выбери формат, который подходит. Доход зависит от города, графика, числа заказов и условий конкретного предложения.</p></div>
 <div class="job-grid">
-<a class="job featured" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="i"><use href="#i-walk"/></svg></span><span class="job-label">Доставка</span></div><h3>Пеший курьер</h3><p>Доставляй заказы по своему району без автомобиля.</p><ul class="chips"><li>До 289 000 ₽</li><li>Без транспорта</li></ul><div class="job-bottom"><span>Оставить заявку</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
-<a class="job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="i"><use href="#i-basket"/></svg></span><span class="job-label">В магазине</span></div><h3>Сборщик заказов</h3><p>Собирай товары по списку и готовь покупки к выдаче или доставке.</p><ul class="chips"><li>Работа в магазине</li></ul><div class="job-bottom"><span>Оставить заявку</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
-<a class="job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="i"><use href="#i-bike"/></svg></span><span class="job-label">Доставка</span></div><h3>Велокурьер</h3><p>Доставляй заказы на велосипеде или электровелосипеде, если такой формат доступен в городе.</p><ul class="chips"><li>Нужен велосипед</li></ul><div class="job-bottom"><span>Оставить заявку</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
-<a class="job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="i"><use href="#i-car"/></svg></span><span class="job-label">Доставка</span></div><h3>Водитель-курьер</h3><p>Доставляй покупки и заказы на личном автомобиле.</p><ul class="chips"><li>Большие заказы</li></ul><div class="job-bottom"><span>Оставить заявку</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
-<a class="job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="i"><use href="#i-car"/></svg></span><span class="job-label">Доставка</span></div><h3>Курьер на арендном авто</h3><p>Свой транспорт не нужен: автомобиль для работы выдадим.</p><ul class="chips"><li>Выдадим авто</li></ul><div class="job-bottom"><span>Оставить заявку</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
-<a class="job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="i"><use href="#i-pin"/></svg></span><span class="job-label">Не уверен</span></div><h3>Подбери подходящий вариант</h3><p>Оставь заявку и узнай, какие позиции доступны рядом с тобой.</p><ul class="chips"><li>Рядом с домом</li><li>Варианты по городу</li></ul><div class="job-bottom"><span>Оставить заявку</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
+<a class="rv job featured" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="pic"><use href="#p-walk"/></svg></span><span class="job-label">Доставка</span></div><h3>Пеший курьер</h3><p>Доставляй заказы по своему району без автомобиля.</p><ul class="chips"><li>До 289 000 ₽</li><li>Без транспорта</li></ul><div class="job-bottom"><span>Хочу гулять за деньги</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
+<a class="rv job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="pic"><use href="#p-basket"/></svg></span><span class="job-label">В магазине</span></div><h3>Сборщик заказов</h3><p>Собирай товары по списку и готовь покупки к выдаче или доставке.</p><ul class="chips"><li>Работа в магазине</li></ul><div class="job-bottom"><span>Хочу работать без улицы</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
+<a class="rv job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="pic"><use href="#p-bike"/></svg></span><span class="job-label">Доставка</span></div><h3>Велокурьер</h3><p>Доставляй заказы на велосипеде или электровелосипеде, если такой формат доступен в городе.</p><ul class="chips"><li>Нужен велосипед</li></ul><div class="job-bottom"><span>Хочу кататься за деньги</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
+<a class="rv job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="pic"><use href="#p-car"/></svg></span><span class="job-label">Доставка</span></div><h3>Водитель-курьер</h3><p>Доставляй покупки и заказы на личном автомобиле.</p><ul class="chips"><li>Большие заказы</li></ul><div class="job-bottom"><span>Хочу ездить и получать</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
+<a class="rv job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="pic"><use href="#p-rent"/></svg></span><span class="job-label">Доставка</span></div><h3>Курьер на арендном авто</h3><p>Свой транспорт не нужен: автомобиль для работы выдадим.</p><ul class="chips"><li>Выдадим авто</li></ul><div class="job-bottom"><span>Хочу авто на старт</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
+<a class="rv job" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener"><div class="job-top"><span class="ico"><svg class="pic"><use href="#p-pin"/></svg></span><span class="job-label">Не уверен</span></div><h3>Подбери подходящий вариант</h3><p>Расскажи о себе и узнай, какие позиции доступны рядом с тобой.</p><ul class="chips"><li>Рядом с домом</li><li>Варианты по городу</li></ul><div class="job-bottom"><span>Подберите за меня</span><span class="arrow"><svg class="i"><use href="#i-arrow"/></svg></span></div></a>
 </div>
 <p class="note">Доход до 289 000 ₽ в месяц — максимальный ориентир, а не гарантированная выплата. Расчёт зависит от города, числа часов и рабочих дней.</p>
 </div></section>
 
 <section class="how" id="how"><div class="wrap">
-<div class="section-top"><div><h2 class="section-title">Начать проще, чем кажется</h2></div><p class="section-desc">Оставь заявку по ссылке и следуй инструкциям на странице оформления.</p></div>
+<div class="section-top"><div><h2 class="section-title">Начать проще, чем кажется</h2></div><p class="section-desc">Всего три шага. Самый сложный из них — выбрать, что проще.</p></div>
+<div class="route" aria-hidden="true"><i class="stop"></i><i class="stop"></i><i class="stop"></i><span class="rider"><svg class="pic"><use href="#p-bike"/></svg></span></div>
 <div class="steps">
-<div class="step"><div class="step-num">1</div><h3>Выбери направление</h3><p>Определи, что тебе ближе: сборка заказов, пешая доставка или работа на автомобиле.</p></div>
-<div class="step"><div class="step-num">2</div><h3>Оставь заявку</h3><p>Нажми кнопку, перейди на страницу партнёра и заполни необходимые данные.</p></div>
-<div class="step"><div class="step-num">3</div><h3>Уточни условия</h3><p>Дождись связи по заявке и узнай требования и доступные условия в своём городе.</p></div>
+<div class="rv step"><div class="step-top"><span class="ico"><svg class="pic"><use href="#p-choose"/></svg></span><span class="step-n">Шаг 1</span></div><h3>Выбери, что проще</h3><p>Пешком, на велосипеде, на авто или в магазине: бери то, что даётся легче всего.</p></div>
+<div class="rv step"><div class="step-top"><span class="ico"><svg class="pic"><use href="#p-form"/></svg></span><span class="step-n">Шаг 2</span></div><h3>Оставь телефон</h3><p>Достаточно имени, телефона и города. Это займёт пару минут.</p></div>
+<div class="rv step"><div class="step-top"><span class="ico"><svg class="pic"><use href="#p-call"/></svg></span><span class="step-n">Шаг 3</span></div><h3>Получи ответ</h3><p>С тобой свяжутся и расскажут условия для твоего города. Заявка ни к чему не обязывает.</p></div>
 </div></div></section>
 
 <section class="apply" id="apply"><div class="wrap"><div class="apply-box">
-<div class="apply-text"><h2>Оставь заявку</h2><p>Укажи контакты и выбери направление. После отправки откроется страница оформления.</p></div>
+<div class="apply-text"><h2>Оставь заявку</h2><p>Имя, телефон, город — и ты на шаг ближе к первым деньгам. После отправки откроется страница оформления. Заявка ни к чему не обязывает.</p><div class="apply-art" aria-hidden="true"><svg class="pic"><use href="#p-bike"/></svg></div></div>
 <form class="lead-form" id="lead" novalidate>
+<div class="ticket"><span><i class="live"></i>Новая заявка</span><span>Займёт пару минут</span></div>
 <label>Имя<input name="name" autocomplete="given-name" required></label>
 <label>Телефон<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></label>
 <label>Город<input name="city" autocomplete="address-level2" required></label>
 <label>Направление<select name="job"><option>Пеший курьер</option><option>Сборщик заказов</option><option>Велокурьер</option><option>Водитель-курьер</option><option>Курьер на арендном авто</option><option>Пока не определился</option></select></label>
-<label class="agree"><input type="checkbox" name="agree" required><span>Согласен на обработку <a href="./privacy.html" target="_blank" rel="noopener"><u>персональных данных</u></a></span></label>
-<button class="btn" type="submit">Отправить заявку</button>
+<label class="agree"><input type="checkbox" name="agree" checked required><span>Согласен на обработку <a href="./privacy.html" target="_blank" rel="noopener"><u>персональных данных</u></a></span></label>
+<button class="btn" type="submit">Оставить заявку</button>
 <p class="form-msg" id="msg" role="status"></p>
 </form></div></div></section>
 
 <section class="faq" id="faq"><div class="wrap faq-grid">
 <div><h2 class="section-title">Коротко о главном</h2><p class="section-desc">Перед отправкой заявки посмотри ответы на частые вопросы.</p></div>
 <div><div class="faq-list">
+<details><summary>Если я раньше так не работал(а)?</summary><p>Это нормально. Инструкции по оформлению и обучение приходят после отклика, а первые заказы можно брать в удобное для тебя время.</p></details>
 <details><summary>Какие направления доступны?</summary><p>Пешая доставка, велосипед или электровелосипед, автомобиль, а также позиции сборщика заказов. Конкретные варианты зависят от города и текущей потребности сервиса.</p></details>
 <details><summary>Сколько можно получить?</summary><p>Доход до 289 000 ₽ в месяц — верхний ориентир, а не фиксированная зарплата. Итоговая сумма зависит от города, графика и числа рабочих дней.</p></details>
 <details><summary>Можно ли работать без автомобиля?</summary><p>Да. Заказы можно доставлять пешком, на велосипеде или автомобиле. Наличие конкретной позиции зависит от города.</p></details>
@@ -261,7 +334,7 @@ section{padding:68px 0}
 <details><summary>Как начать сотрудничество?</summary><p>Оставить заявку, пройти оформление, получить брендированную одежду и выполнить первые заказы. Инструкции по оформлению и обучению приходят после отклика.</p></details>
 <details><summary>Можно ли работать рядом с домом?</summary><p>Да, можно выбрать удобный район доставки, в том числе рядом с домом. Территорию можно изменить.</p></details>
 </div>
-<div class="faq-cta"><a class="btn" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener">Оставить заявку</a></div></div>
+<div class="faq-cta"><a class="btn" href="#apply">Всё ясно, хочу попробовать</a></div></div>
 </div></section>
 </main>
 
@@ -269,7 +342,7 @@ section{padding:68px 0}
 <!-- Укажите рекламодателя и другие обязательные данные для маркировки рекламы -->
 <div class="footer-note"><span class="ad">Реклама</span>Информационная страница для привлечения кандидатов. Не является официальным сайтом Купера или публичной офертой. Доход до 289 000 ₽ — максимальный ориентир, не гарантия. Условия, вакансии и выплаты уточняйте на партнёрской странице.</div></div></footer>
 
-<div class="sticky"><a class="btn" href="https://cpa.kuper.ru/s/3YrlNTPmAU?statid=7729_&amp;erid=2sHEdXspji9Y3bJqnj8jRxP31t6CWhbG1g6QatzM8oimKtoCXoPXAPaT" target="_blank" rel="noopener">Оставить заявку</a></div>
+<div class="sticky"><a class="btn" href="#apply">Легко заработать</a></div>
 
 <script>
 (()=>{
@@ -289,10 +362,20 @@ const btn=fm.querySelector("button");btn.disabled=true;
 if(ENDPOINT){
 try{const r=await fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)});if(!r.ok)throw 0}
 catch(_){msg.textContent="Не удалось отправить. Попробуйте ещё раз.";btn.disabled=false;return}
-msg.textContent="Заявка отправлена. Открываем страницу оформления…";
+msg.textContent="Принято! Открываем оформление…";
 }
 setTimeout(()=>{location.href=GO},ENDPOINT?1200:0);
 });
+const st=document.querySelector(".sticky");
+if(st&&"IntersectionObserver"in window){const vis=new Set();
+const io2=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?vis.add(e.target):vis.delete(e.target));st.classList.toggle("hide",vis.size>0)});
+[document.querySelector(".hero .actions"),document.getElementById("apply")].forEach(t=>t&&io2.observe(t))}
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!rm&&"IntersectionObserver"in window){
+document.documentElement.classList.add("js");
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;const t=en.target;io.unobserve(t);t.classList.add("in");setTimeout(()=>{t.classList.remove("rv","in");t.style.transitionDelay=""},1000+(+t.dataset.d||0))}),{threshold:.12});
+document.querySelectorAll(".rv").forEach((t,i)=>{const d=(i%3)*100;t.dataset.d=d;t.style.transitionDelay=d+"ms";io.observe(t)});
+}
 const el=document.getElementById("income");
 if(!el||matchMedia("(prefers-reduced-motion: reduce)").matches)return;
 const T=289000,D=1500,w=el.offsetWidth;el.style.minWidth=w+"px";
