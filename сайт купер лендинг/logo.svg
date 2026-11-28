@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" role="img" aria-labelledby="title">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 250" role="img" aria-labelledby="title">
 <title id="title">Купер</title>
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#65f083"/><stop offset="1" stop-color="#d8f8e0"/></linearGradient></defs>
-<rect width="1080" height="1080" rx="0" fill="url(#bg)"/>
-<g fill="#fff" stroke="#080b09" stroke-width="16" stroke-linejoin="round" stroke-linecap="round">
-<circle cx="540" cy="408" r="63"/>
-<rect x="443" y="458" width="194" height="66" rx="33"/>
-<path d="M470 520 414 580h88l38-45 38 45h88l-56-60"/>
+<g transform="translate(12 8)" stroke="#101410" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="106" cy="58" r="32" fill="#fff"/>
+  <path d="M56 105 Q106 78 156 105 L174 166 Q178 181 163 184 L49 184 Q34 181 38 166 Z" fill="#fff"/>
+  <path d="M67 111 L37 143 L13 126" fill="none"/>
+  <path d="M145 111 L175 143 L199 126" fill="none"/>
+  <path d="M80 184 L68 222 M132 184 L144 222" fill="none"/>
 </g>
-<text x="540" y="705" text-anchor="middle" fill="#050706" font-family="Arial Black,Arial,sans-serif" font-size="154" font-weight="900" letter-spacing="-13">купер</text>
+<text x="226" y="169" fill="#101410" font-family="Arial, sans-serif" font-size="118" font-weight="900" letter-spacing="-9">купер</text>
 </svg>
