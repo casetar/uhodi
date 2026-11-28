@@ -113,8 +113,9 @@ details p{font-size:15px;line-height:1.75;color:var(--muted);max-width:640px;mar
 
 footer{padding:34px 0;background:var(--ink);color:#fff}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
-.flogo{display:block;flex:none;padding:10px 20px;border-radius:24px;background:#f5f8f4;line-height:0}
-.footer-row img{display:block;width:120px;height:120px;object-fit:contain}
+.flogo{display:block;flex:none;padding:0;background:transparent;line-height:0;filter:drop-shadow(0 0 14px rgba(104,241,138,.18));transition:filter .25s,transform .25s}
+.flogo:hover{filter:drop-shadow(0 0 20px rgba(104,241,138,.42));transform:translateY(-2px)}
+.footer-row img{display:block;width:180px;height:auto;object-fit:contain}
 .footer-note{font-size:13px;line-height:1.65;color:#a9b5ab;max-width:600px;text-align:right}
 .ad{display:inline-block;margin-right:6px;padding:1px 8px;border:1px solid #a9b5ab;border-radius:6px;font-weight:800;color:#fff}
 .sticky{display:none}
