@@ -26,7 +26,7 @@ a{color:inherit;text-decoration:none}
 
 header{position:absolute;z-index:5;top:0;left:0;right:0;padding:16px 0}
 .nav{display:flex;align-items:center;justify-content:space-between;position:relative}
-.brand img{display:block;width:108px;height:108px;object-fit:contain}
+.brand img{display:block;width:176px;height:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 2px 3px rgba(16,45,24,.38))}
 .navlinks{display:flex;gap:30px;font-size:15px;font-weight:700}
 .navlinks a{opacity:.75}.navlinks a:hover{opacity:1}
 .nav-right{display:flex;align-items:center;gap:10px}
@@ -115,7 +115,7 @@ footer{padding:34px 0;background:var(--ink);color:#fff}
 .footer-row{display:flex;justify-content:space-between;align-items:center;gap:24px}
 .flogo{display:block;flex:none;padding:0;background:transparent;line-height:0;filter:drop-shadow(0 0 14px rgba(104,241,138,.18));transition:filter .25s,transform .25s}
 .flogo:hover{filter:drop-shadow(0 0 20px rgba(104,241,138,.42));transform:translateY(-2px)}
-.footer-row img{display:block;width:180px;height:auto;object-fit:contain}
+.footer-row img{display:block;width:220px;height:auto;max-width:100%;object-fit:contain}
 .footer-note{font-size:13px;line-height:1.65;color:#a9b5ab;max-width:600px;text-align:right}
 .ad{display:inline-block;margin-right:6px;padding:1px 8px;border:1px solid #a9b5ab;border-radius:6px;font-weight:800;color:#fff}
 .sticky{display:none}
@@ -146,7 +146,7 @@ footer{padding:34px 0;background:var(--ink);color:#fff}
 .navlinks.open{display:flex;flex-direction:column;gap:16px;position:absolute;top:calc(100% + 6px);left:0;right:0;padding:22px;border-radius:20px;background:#fff;box-shadow:0 18px 40px #0003}
 .burger{display:grid}
 .hero{padding:132px 0 60px}
-.brand img{width:88px;height:88px}
+.brand img{width:148px;height:auto}
 .hero-grid{grid-template-columns:1fr}
 .hero-art{min-height:380px}
 .section-top{display:block}.section-desc{margin-top:14px}
@@ -174,7 +174,7 @@ section{padding:68px 0}
 .job{min-height:0}
 .route{display:none}
 .apply-art{display:none}
-.footer-row img{width:180px;height:auto;max-width:100%}
+.footer-row img{width:220px;height:auto;max-width:100%}
 .apply{padding-bottom:68px}
 .apply-box{border-radius:24px}
 .lead-form{grid-template-columns:1fr;padding:18px}
@@ -261,7 +261,7 @@ h1{font-size:33px}
 </defs></svg>
 
 <header><div class="wrap nav">
-<a class="brand" href="#"><img src="./logo.svg" alt="Купер"></a>
+<a class="brand" href="#"><img src="./logo.svg?v=20261128" alt="Купер"></a>
 <nav class="navlinks" id="menu" aria-label="Разделы"><a href="#jobs">Направления</a><a href="#how">Как начать</a><a href="#faq">Вопросы</a><a href="#apply">Заявка</a></nav>
 <div class="nav-right"><a class="nav-cta" href="#apply">Легко заработать</a><button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="menu">☰</button></div>
 </div></header>
